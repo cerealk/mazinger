@@ -6,7 +6,7 @@ import org.junit.Test
 class TestSingle extends BaseMazingerTest {
 
     @Test
-    void SingleTest() {
+    void singleTest() {
 
         suite("Single Test") {
 
@@ -17,7 +17,7 @@ class TestSingle extends BaseMazingerTest {
     }
 
     @Test
-    void SingleTestWithInitInSuite() {
+    void singleTestWithInitInSuite() {
 
         suite("SingleTestWithInitInSuite") {
             a = 1
@@ -30,7 +30,7 @@ class TestSingle extends BaseMazingerTest {
     }
 
     @Test
-    void SingleTestWithBeforeAndAfter() {
+    void singleTestWithBeforeAndAfter() {
         suite("SingleTestWithBefore") {
             before("before") {
                 assert true

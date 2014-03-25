@@ -13,7 +13,7 @@ class MazingerStack {
     def test(Closure c) {
         currentStrip.test = c
         testStrip << currentStrip
-        currentStrip == new TestStrip()
+        currentStrip = new TestStrip()
     }
 
     def run() {
