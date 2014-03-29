@@ -32,7 +32,7 @@ class TestSingle extends BaseMazingerTest {
     @Test
     void singleTestWithBeforeAndAfter() {
         suite("SingleTestWithBefore") {
-            before("before") {
+            before() {
                 assert true
                 a = 1
                 b = 1
@@ -45,7 +45,7 @@ class TestSingle extends BaseMazingerTest {
                 b--
             }
 
-            after("close") {
+            after() {
                 assert b == 0
                 assert a == 2
             }

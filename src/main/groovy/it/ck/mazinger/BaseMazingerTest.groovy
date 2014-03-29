@@ -16,7 +16,7 @@ class BaseMazingerTest {
         stack.run()
     }
 
-    def before(String name, Closure c){
+    def before(Closure c){
         stack.before c
     }
 
@@ -24,7 +24,7 @@ class BaseMazingerTest {
         stack.test c
     }
 
-    def after(String name, Closure c){
+    def after( Closure c){
         stack.after c
     }
 }

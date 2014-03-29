@@ -5,7 +5,7 @@ package it.ck.mazinger
  */
 class MazingerStack {
 
-    def context = [:]
+    def context = [:]//new Context()
     def testStrip = []
 
     def currentStrip = new TestStrip();
@@ -13,12 +13,18 @@ class MazingerStack {
     def test(Closure c) {
         currentStrip.test = c
         testStrip << currentStrip
-        currentStrip = new TestStrip()
+        initNewStrip()
+    }
+
+    private void initNewStrip() {
+        def newStrip = new TestStrip(before: currentStrip.before, context:[:]  << context )
+        newStrip.before = currentStrip.before
+
+        currentStrip = newStrip
     }
 
     def run() {
         testStrip.each(){
-            it.context = context
             it.run()
         }
     }
