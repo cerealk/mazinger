@@ -30,10 +30,10 @@ class MazingerStack {
     }
 
     def before(Closure c) {
-        currentStrip.before = c
+        currentStrip.before << c
     }
 
     def after (Closure c){
-        currentStrip.after = c
+        currentStrip.after << c
     }
 }

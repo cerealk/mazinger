@@ -7,13 +7,18 @@ class BaseMazingerTest {
 
 
     def stack = new MazingerStack()
+    def spec(String name, Closure c){
 
+        c()
+
+        stack.run()
+    }
     def suite(String name, Closure c){
         c.delegate = stack.context
         c.resolveStrategy= Closure.DELEGATE_FIRST
         c()
 
-        stack.run()
+
     }
 
     def before(Closure c){
@@ -24,7 +29,7 @@ class BaseMazingerTest {
         stack.test c
     }
 
-    def after( Closure c){
+    def after(Closure c){
         stack.after c
     }
 }

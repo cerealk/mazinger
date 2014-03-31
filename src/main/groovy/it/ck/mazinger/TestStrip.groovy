@@ -4,10 +4,10 @@ package it.ck.mazinger
  * Created by cerealk on 3/15/14.
  */
 class TestStrip {
-    def before
+    def before = []
     def test
     def context
-    Closure after
+    def after = []
 
     def run(){
         runBefore()
@@ -16,14 +16,14 @@ class TestStrip {
     }
 
     def runAfter() {
-        if(after != null){
+        after.each {
             prepareForRun (after)
             after()
         }
     }
 
     def runBefore() {
-        if(before != null){
+        before.each {
             prepareForRun(before)
             before()
         }
